@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Audio Sharing Extension",
+    "version": "1.0",
+    "permissions": ["activeTab", "background", "audioCapture"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": ["http://localhost/*", "https://your-websocket-server/*"]
+  }
+  
